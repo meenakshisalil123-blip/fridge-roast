@@ -1,0 +1,527 @@
+﻿* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root {
+    --blue: #83dce9;
+    --blue-light: #bbf6f8;
+    --blue-dark: #457b89;
+    --black: #1f1f2a;
+    --line: #1c3140;
+    --cream: #fffaf5;
+    --shadow: rgba(17, 45, 68, 0.2);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background:
+        radial-gradient(circle at 80% 12%, #fffddc 0%, transparent 12%),
+        radial-gradient(circle at 24% 80%, #ffddea 0%, transparent 10%),
+        linear-gradient(135deg, #afefff 0%, #d4faff 50%, #fffdfb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: min(760px, calc(100vw - 30px));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fridge-card {
+    width: min(620px, 100%);
+    background: rgba(255,255,255,0.76);
+    border: 3px solid rgba(69,123,137,0.8);
+    border-radius: 34px;
+    padding: 30px 24px;
+    box-shadow: 0 25px 60px var(--shadow);
+    text-align: center;
+}
+
+.app-title h1 {
+    margin: 0;
+    font-size: clamp(36px, 5vw, 48px);
+    color: var(--blue-dark);
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin: 5px 0 14px;
+    color: #527b87;
+    font-size: 16px;
+}
+
+.fridge-scene {
+    width: min(560px, 100%);
+    min-height: 430px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fridge-wrap {
+    width: 410px;
+    height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fridge-shadow {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: -14px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(31, 58, 75, 0.25);
+    filter: blur(10px);
+}
+
+.fridge-body {
+    width: 360px;
+    height: 410px;
+    background: linear-gradient(180deg, var(--blue-light) 0%, var(--blue) 100%);
+    border: 4px solid var(--line);
+    border-radius: 30px 30px 24px 24px;
+    box-shadow: 0 20px 35px var(--shadow), inset 8px 0 20px rgba(255,255,255,0.7), inset -4px -8px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.fridge-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+    border-radius: 24px 24px 0 0;
+    pointer-events: none;
+}
+
+.freezer-zone {
+    height: 160px;
+    background: linear-gradient(180deg, #9eeffa 0%, #74cedd 100%);
+    border-bottom: 3px solid var(--line);
+    padding: 14px;
+    position: relative;
+}
+
+.freezer-panel {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #97eaf8 0%, #b7fce9 100%);
+    border-radius: 18px 18px 12px 12px;
+    border: 3px solid var(--line);
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.freezer-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: rgba(255,255,255,0.7);
+}
+
+.freezer-shelf {
+    position: absolute;
+    width: 90px;
+    height: 5px;
+    background: var(--line);
+    border-radius: 3px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+}
+
+.shelf-one { left: 20px; top: 25px; }
+.shelf-two { left: 20px; top: 65px; }
+.shelf-three { left: 20px; top: 105px; }
+
+.freezer-handle {
+    position: absolute;
+    right: 12px;
+    top: 22px;
+    width: 8px;
+    height: 95px;
+    background: var(--line);
+    border-radius: 8px;
+}
+
+.face {
+    position: relative;
+    width: 140px;
+    height: 110px;
+    margin: 12px auto 0;
+}
+
+.brow {
+    display: block;
+    width: 26px;
+    height: 7px;
+    background: var(--black);
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    z-index: 3;
+}
+
+.left-brow {
+    left: 5px;
+    transform: rotate(-26deg);
+}
+
+.right-brow {
+    right: 5px;
+    transform: rotate(26deg);
+}
+
+.eye {
+    position: absolute;
+    top: 22px;
+    width: 40px;
+    height: 42px;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid var(--black);
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-eye { left: 13px; }
+.right-eye { right: 13px; }
+
+.iris {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 45% 45%, var(--black) 0%, var(--black) 65%, #6e8cbf 100%);
+    border: 2px solid var(--line);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.7);
+    position: relative;
+}
+
+.shine {
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+}
+
+.mouth {
+    position: absolute;
+    left: 50%;
+    top: 68px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 30px;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 4px solid var(--black);
+    border-left: 4px solid var(--black);
+    border-right: 4px solid var(--black);
+    background: linear-gradient(180deg, #ff7382 0%, #cc3048 100%);
+    box-shadow: inset 0 5px rgba(255,255,255,0.6);
+    overflow: hidden;
+}
+
+.mouth::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    top: 4px;
+    height: 16px;
+    background: white;
+    clip-path: ellipse(50% 50% at 50% 100%);
+    opacity: 0.95;
+}
+
+.mouth-tongue {
+    position: absolute;
+    left: 28px;
+    top: 20px;
+    width: 12px;
+    height: 14px;
+    background: #ff6b67;
+    border-radius: 50% 50% 8px 8px;
+    border: 2px solid var(--black);
+}
+
+.tooth {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 12px;
+    background: white;
+    border-radius: 2px;
+}
+
+.tooth-one { left: 10px; }
+.tooth-two { left: 24px; }
+.tooth-three { left: 38px; }
+
+.fridge-lower {
+    height: 175px;
+    padding: 16px 14px 0;
+    background: linear-gradient(180deg, #a7e8fd 0%, #81bdd7 100%);
+    position: relative;
+}
+
+.fridge-door {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #bdeff8 0%, #92cde6 100%);
+    border: 3px solid var(--line);
+    border-radius: 12px 12px 18px 18px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.7);
+}
+
+.door-beam {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(28,49,64,0.8);
+}
+
+.beam-left { left: 30%; }
+.beam-right { right: 30%; }
+
+.fridge-handle {
+    position: absolute;
+    right: 16px;
+    top: 30px;
+    width: 7px;
+    height: 100px;
+    border-radius: 8px;
+    background: var(--line);
+}
+
+.door-sparkle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+    opacity: 0.9;
+}
+
+.sparkle-one {
+    left: 50px;
+    top: 30px;
+}
+
+.sparkle-two {
+    right: 90px;
+    top: 85px;
+}
+
+.food-icons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    opacity: 0.95;
+}
+
+.food-icon {
+    width: 50px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milk-cap {
+    position: absolute;
+    top: -4px;
+    width: 20px;
+    height: 10px;
+    border-radius: 4px;
+    background: var(--cream);
+    border: 2px solid var(--line);
+}
+
+.milk-body {
+    width: 24px;
+    height: 50px;
+    border-radius: 12px 12px 10px 10px;
+    background: linear-gradient(180deg, #fff, #a8dde9);
+    border: 3px solid var(--line);
+}
+
+.carrot-leaf {
+    position: absolute;
+    top: 0;
+    width: 34px;
+    height: 18px;
+    background: repeating-linear-gradient(90deg, #79b55e 0 12px, #cedf83 12px 16px);
+    border-radius: 50% 50% 0 0;
+    border: 2px solid var(--line);
+}
+
+.carrot-body {
+    position: absolute;
+    top: 15px;
+    width: 24px;
+    height: 50px;
+    background: linear-gradient(180deg, #ffb96d, #e2673c);
+    border-radius: 50% 50% 10px 10px;
+    border: 3px solid var(--line);
+    transform: rotate(12deg);
+}
+
+.egg-top {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--line);
+}
+
+.egg-body {
+    position: absolute;
+    top: 12px;
+    width: 30px;
+    height: 44px;
+    border-radius: 50% 50% 55% 55%;
+    background: var(--cream);
+    border: 2px solid var(--line);
+}
+
+.feet {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 28px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.foot {
+    display: block;
+    width: 35px;
+    height: 12px;
+    background: var(--black);
+    border-radius: 10px 10px 4px 4px;
+}
+
+.roast-form {
+    margin-top: 8px;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: min(280px, 56%);
+    padding: 15px 18px;
+    border: 3px solid var(--blue-dark);
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+}
+
+input:focus {
+    box-shadow: 0 0 0 4px rgba(83,205,233,0.3);
+}
+
+button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff7a59, #e13d71);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+.screen {
+    width: 150px;
+    height: 38px;
+    margin: 12px auto 8px;
+    border-radius: 10px;
+    background: var(--black);
+    color: #00ff88;
+    border: 3px solid var(--blue-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen span {
+    color: #00ff88;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.result {
+    min-height: 70px;
+    width: min(380px, 90%);
+    margin: 10px auto 0;
+    padding: 14px 16px;
+    background: white;
+    border-radius: 14px;
+    border: 3px solid var(--blue-dark);
+    color: var(--line);
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .fridge-wrap {
+        transform: scale(0.86);
+    }
+
+    .fridge-card {
+        padding: 20px;
+    }
+}

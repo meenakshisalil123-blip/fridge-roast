@@ -1,1 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fridge Roast</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="app">
+        <section class="fridge-card">
+            <header class="app-title">
+                <h1>Fridge Roast</h1>
+                <p class="subtitle">A friendly little fridge</p>
+            </header>
 
+            <section class="fridge-scene" aria-label="Cute cartoon fridge">
+                <div class="fridge-wrap">
+                    <div class="fridge-shadow"></div>
+
+                    <section class="fridge-body">
+                        <section class="freezer-zone">
+                            <div class="freezer-panel">
+                                <span class="freezer-shelf shelf-one"></span>
+                                <span class="freezer-shelf shelf-two"></span>
+                                <span class="freezer-shelf shelf-three"></span>
+                                <span class="freezer-handle"></span>
+
+                                <div class="face">
+                                    <span class="left-brow brow"></span>
+                                    <span class="right-brow brow"></span>
+
+                                    <span class="eye left-eye">
+                                        <span class="iris">
+                                            <span class="shine"></span>
+                                        </span>
+                                    </span>
+
+                                    <span class="eye right-eye">
+                                        <span class="iris">
+                                            <span class="shine"></span>
+                                        </span>
+                                    </span>
+
+                                    <span class="mouth">
+                                        <span class="tooth tooth-one"></span>
+                                        <span class="tooth tooth-two"></span>
+                                        <span class="tooth tooth-three"></span>
+                                        <span class="mouth-tongue"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="fridge-lower">
+                            <div class="fridge-door">
+                                <span class="door-beam beam-left"></span>
+                                <span class="door-beam beam-right"></span>
+                                <span class="fridge-handle"></span>
+
+                                <div class="door-sparkle sparkle-one"></div>
+                                <div class="door-sparkle sparkle-two"></div>
+
+                                <div class="food-icons">
+                                    <span class="food-icon milk-bottle">
+                                        <span class="milk-cap"></span>
+                                        <span class="milk-body"></span>
+                                    </span>
+                                    <span class="food-icon carrot">
+                                        <span class="carrot-leaf"></span>
+                                        <span class="carrot-body"></span>
+                                    </span>
+                                    <span class="food-icon egg">
+                                        <span class="egg-top"></span>
+                                        <span class="egg-body"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <footer class="feet">
+                            <span class="foot foot-left"></span>
+                            <span class="foot foot-right"></span>
+                        </footer>
+                    </section>
+                </div>
+            </section>
+
+            <section class="roast-form">
+                <div class="input-area">
+                    <input type="text" id="objectInput" placeholder="Type something to roast..." autocomplete="off" />
+                    <button id="roastButton" type="button" onclick="roastObject()">Roast</button>
+                </div>
+
+                <div class="screen">
+                    <span id="screenText">READY</span>
+                </div>
+
+                <div class="result" id="result">
+                    <span>The fridge is listening...</span>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
