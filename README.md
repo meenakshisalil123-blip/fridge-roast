@@ -48,7 +48,11 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
+<img width="1920" height="1080" alt="Screenshot 2026-09-12 063342" src="https://github.com/user-attachments/assets/35dd6f49-08e4-41bf-a0fc-974981e2ff3c" />
+<img width="1920" height="1080" alt="Screenshot 2026-09-12 063407" src="https://github.com/user-attachments/assets/ef7ea465-8505-4860-beb9-edcc902781c7" />
+<img width="1920" height="1080" alt="Screenshot 2026-09-12 063252" src="https://github.com/user-attachments/assets/2600740a-b5d9-42fd-aa87-74561d728e17" />
+
+
 *Add caption explaining what this shows*
 
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
